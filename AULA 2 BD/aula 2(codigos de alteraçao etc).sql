@@ -1,19 +1,19 @@
 use biblioteca;
 
 /*
-===========================ALTERANDO COLUNA==================================
+===========================ALTERANDO COLUNA===========================================================
 ALTER TABLE Endereço ADD COLUMN CEP VARCHAR(12) NOT NULL;
 */
 
 
 /*
-======================ADICONANDO UMA RESTRIÇAO PARA O EMAIL========================
+======================ADICONANDO UMA RESTRIÇAO PARA O EMAIL============================================
 ALTER TABLE Usuario ADD CONSTRAINT emailUnico UNIQUE (email);
 ALTER TABLE Autor ADD CONSTRAINT cpfUnico UNIQUE(cpf);
 /*
 
 /*
-======================EDITANDO REGISTRO NA TABELA DO AUTO===========================
+======================EDITANDO REGISTRO NA TABELA DO AUTOR==============================================
 UPDATE Autor
 SET cpf = 635
 WHERE AutorID = 4;
@@ -22,7 +22,7 @@ SELECT * FROM Autor;
 */
 
 /*
-==========================TRANSFORMANFO ENDEREÇO EM UMA NOVA TABELA======================
+==========================TRANSFORMANFO ENDEREÇO EM UMA NOVA TABELA=======================================
 create table Endereço(
 	endereçoID INT auto_increment primary key,
     rua varchar(150) not null,
@@ -36,13 +36,13 @@ create table Endereço(
 */
 
 /*
-============================APAGANDO UMA COLUNA EXPECIFICA===========================
+============================APAGANDO UMA COLUNA EXPECIFICA=================================================
 ALTER TABLE Usuario DROP COLUMN Endereco;
 
 */
 
 /*
-=============================ADICIONANDO DADOS EM ENDEREÇOS===========================
+=============================ADICIONANDO DADOS EM ENDEREÇOS=================================================
 
 INSERT INTO Endereço ( Rua, Numero, Complemento, Bairro, Cidade, userID, CEP) VALUES
 	('rua A', '123', 'apto 1', 'bairro 1', 'cidade 1', 1, '1234421-218'),
@@ -53,7 +53,7 @@ INSERT INTO Endereço ( Rua, Numero, Complemento, Bairro, Cidade, userID, CEP) V
     
 */
 
-/*=========================FAZENDO PESQUISA NO BANCO DE DADOS===========================*/
+/*=========================FAZENDO PESQUISA NO BANCO DE DADOS===============================================*/
 #SELECT NOME, ANO FROM Livro WHERE autorID = 1;
 
 #SELECT NOME, ANO FROM Livro WHERE ANO  = 1882;
@@ -71,11 +71,56 @@ WHERE
 	Livro.autorID = 1;
 */
 
+/*========================================DADOS DOS USUARIOS QUE ESTAP ATRASADOS==============================
+
 SELECT
-	Usuario.nome, Livro.nome, Emprestimo.DataEmprestimo, Emprestimo.DataDevolucao
+	Usuario.nome AS NomeUsuario,
+	Livro.nome AS NomeLivro,
+    Emprestimo.DataDevolucao AS DataAtrasada,
+    Emprestimo.DataEmprestimo AS DataEmprestimo
 FROM
 	Emprestimo
 		INNER JOIN 
-	Emprestimo ON Livro.autorID = Autor.autorID
+	Usuario ON Emprestimo.userID = Usuario.userID
+		INNER JOIN
+	Livro ON Emprestimo.livroID = Livro.livroID
 WHERE
-	Livro.autorID = 1;
+	Emprestimo.DataDevolucao < curdate();
+    
+/*
+
+/*===================================================TODOS OS LIVROS DE MACHADO DE ASSIS===========================
+
+SELECT 
+	Autor.nome AS nome_do_autor,
+	Livro.nome AS nome_do_livro
+FROM 
+	Livro 
+		INNER JOIN
+	Autor ON Livro.autorID = Autor.autorID
+WHERE 
+	Autor.nome = 'Machado de Assis'; 
+*/
+
+/*=======================================TODOS OS LIVROS DA EDITORA 1================================================
+SELECT 
+	Editora.nome AS NOME_EDITORA,
+    Livro.nome AS NOME_LIVRO
+FROM
+	Livro
+		INNER JOIN 
+	Editora ON Livro.editoraID = Editora.editoraID
+WHERE
+	Editora.editoraID = 1;
+    
+*/
+
+/*=========================================TODOS OS ATRASOS DE MARIA=====================================================*/
+
+SELECT
+	Livro.nome AS nome_do_livro,
+    Usuario.nome AS nome_do_Usuario
+FROM
+	Usuario
+		INNER JOIN
+	Livro ON 

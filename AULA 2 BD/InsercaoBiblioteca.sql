@@ -38,4 +38,27 @@ INSERT INTO Usuario (nome, email, telefone, endereco) VALUES
     ('Jose', 'jose@email.com', '(84)98888-8899', 'Rua C, Cidade C'),
     ('Junior', 'jr@email.com', '(84)99999-8899', 'Rua A, Cidade A'),
     ('Ana', 'ana@email.com', '(83)98899-8899', 'Rua C, Cidade C');
-   
+
+INSERT INTO Emprestimo (LivroID, UserID, DataEmprestimo, DataDevolucao) VALUES
+    (1, 5, '2023-09-01', '2023-09-15'),
+    (1, 2, '2023-09-01', '2023-09-15'),
+    (1, 3, '2023-09-01', '2023-09-15'),
+    (1, 4, '2023-09-01', '2023-09-15'),
+    (1, 2, '2023-09-01', '2023-09-15'),
+    (4, 5, '2023-09-01', '2023-09-15'),
+    (4, 1, '2023-09-02', '2023-09-14'), -- (atrasada)
+    (3, 2, '2023-09-03', '2023-09-13'), -- (atrasada)
+    (4, 4, '2023-09-04', '2023-09-18'),
+    (5, 3, '2023-09-05', '2023-09-20'),
+    (6, 5, '2023-09-06', '2023-09-10'), -- (atrasada)
+    (7, 4, '2023-09-07', '2023-09-17'),
+    (8, 3, '2023-09-08', '2023-09-12'), -- (atrasada)
+    (9, 2, '2023-09-09', '2023-09-19'),
+    (10, 1, '2023-09-10', '2023-09-21');
+
+INSERT INTO Endereço ( Rua, Numero, Complemento, Bairro, Cidade, userID, CEP) VALUES
+	('rua A', '123', 'apto 1', 'bairro 1', 'cidade 1', 1, '1234421-218'),
+    ('rua B', '456', null, 'bairro 2', 'cidade 2', 2, '1234421-219'),
+    ('rua C', '789', 'casa 2', 'bairro 3', 'cidade 3', 3, '1234421-212'),
+    ('rua D', '101', 'casa 3', 'bairro 2', 'cidade 1', 4, '11111-222'),
+	('rua E', '222', NULL, 'bairro 4', 'cidade 4', 5, '1234421-218');
