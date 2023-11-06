@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register-Felipelandia</title>
+        <style>
+            input, h1, label {
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(0, 0, 0);
+                text-align: center;
+            }
+            body {
+                margin-top: 10%;
+                background-color: rgb(32, 30, 30);
+            }
+            main {
+                background-color: rgb(255, 255, 255);
+                max-width: 500px;
+                margin: auto;
+                border-radius: 10px;
+                padding: 50px 30px;
+            }
+            label {
+                margin-left: 70px;
+            }
+            input {
+                padding: 10px 100px;
+                border: 1px solid ligth rgb(0, 0, 0);
+                border-radius: 20px;
+                margin-bottom: 20px;
+            }
+            input:hover {
+                background-color: #252629;
+                color: white;
+                transition-duration: 0.5s;
+            }
+            .labels {
+                display: flex;
+                justify-content: center;
+            }
+            .Botao {
+                background-image: linear-gradient(to right, #252629, #3e4044, #a1a3a7);
+                margin-bottom: 30px;
+            }
+            a {
+                padding: 10px 20px;
+                border: 1px solid black;
+                text-decoration: none;
+                border-radius: 10px;
+                color: black;
+                font-size: 10px;
+            }
+            a:hover {
+                background-color: rgb(48, 48, 48);
+                color: white;
+                transition-duration: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="Fundo">
+                <h1>Register</h1>
+                <form action="/cadastro" method="post" autocomplete="off">
+                    <label for="iemail">Usuario</label><br>
+                    <div class="labels">
+                        <input placeholder="Type your user" type="text" name="usuario" id="iusuario"></p>
+                    </div> 
+                    <label for="ipassword">Password</label><br>  
+                    <div class="labels">
+                        <input placeholder="Type your password" type="password" name="Password" id="ipassword">
+                    </div>
+                    <div class="labels">
+                        <input class="Botao" type="submit" value="Register">
+                    </div>
+                    <a href="/">Homepage</a>
+                </form>
+            </div>
+        </main>
+       
+    </body>
+</html>

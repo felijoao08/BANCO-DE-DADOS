@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Register-Felipelandia</title>
+        <link rel="stylesheet" href="static/css/style.css">
+        <title>login-Felipelandia</title>
         <style>
             input, h1, label {
                 font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +27,7 @@
                 padding: 10px 100px;
                 border: 1px solid ligth rgb(0, 0, 0);
                 border-radius: 20px;
-                margin-bottom: 20px;
+                margin-bottom: 20px;         
             }
             input:hover {
                 background-color: #252629;
@@ -54,23 +55,34 @@
                 color: white;
                 transition-duration: 0.5s;
             }
+            .mensagem {
+                text-align: center;
+                padding: 20px 40px;
+                margin-bottom: 20px;
+                background-color: rgba(255, 0, 0, 0.637);
+                border-radius: 10px;
+            }
         </style>
     </head>
     <body>
         <main>
             <div class="Fundo">
-                <h1>Register</h1>
-                <form action="/cadastro" method="post" autocomplete="off">
+                <h1>Login</h1>
+                {% set mensagens = get_flashed_messages()%} 
+                {% if mensagens %}
+                <div class="mensagem" >Invalid password or email</div>
+                {% endif %}
+                <form action="/login" method="post" autocomplete="off">
                     <label for="iemail">Email</label><br>
                     <div class="labels">
-                        <input placeholder="Type your e-mail" type="text" name="email" id="iemail"></p>
+                        <input placeholder="Type your e-mail" type="text" name="usuario" id="iusuario"></p>
                     </div> 
                     <label for="ipassword">Password</label><br>  
                     <div class="labels">
                         <input placeholder="Type your password" type="password" name="Password" id="ipassword">
                     </div>
                     <div class="labels">
-                        <input class="Botao" type="submit" value="Register">
+                        <input class="Botao" type="submit" value="Login">
                     </div>
                     <a href="/">Homepage</a>
                 </form>
