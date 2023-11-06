@@ -1,9 +1,11 @@
 from flask import Flask,  request, jsonify, render_template, redirect, flash
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
 
 import mysql.connector
  
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "dsafonfnwruihruiwfjlhbsdavbieffui"
+ 
 
 db = mysql.connector.connect (
     host = 'localhost',
@@ -50,25 +52,25 @@ def login():
     objetos =  cursor.fetchall()
 
     #pegando os valores que quero do dicionario(o banco de dados)
-    name = None
-    senha = None
-    for obj in objetos:
-        name = obj.get('nome')
-        senha = obj.get('senha')
-    
+    for dicionario in objetos: #estou verificando cada um dos dicionarios, pois 'objetos' é uma lista de dicionarios
+        name = dicionario['nome'] 
+        senha = dicionario['senha']
+
+        #verificando se os valores sao correspondendes e parando o laço de repetição
+        if name == usuario and senha == Password:
+            break
+
     #verificando se os valores sao correspondentes 
     if name == usuario and senha == Password:
         cursor.close()
         return redirect('/resposta')
-        
+    #emitindo uma mensagem de erro caso o usuario n esteja cadastrado ou erro de digitação
     else:
         flash("Invalid password or user")
         cursor.close()
         return redirect('/login')
-        
     
         
-
 #ROTA PARA QUANDO ENTRAR NO SITE
 @app.route('/resposta')
 def resposta():

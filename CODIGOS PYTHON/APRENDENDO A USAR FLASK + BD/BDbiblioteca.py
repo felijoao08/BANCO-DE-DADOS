@@ -2,20 +2,20 @@ from flask import Flask, request, jsonify
 
 import mysql.connector
 
-
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "dsafonfnwruihruiwfjlhbsdavbieffui"
 
 db = mysql.connector.connect (
     host = 'localhost',
     user = "root",
-    password = 'labinfo',
-    database = "biblioteca"
+    password = 'felipe09',
+    database = "cadastros"
 )
 
 @app.route('/search', methods =['GET'])
 def search():
     cursor = db.cursor(dictionary=True)
-    cursor.execute('SELECT * FROM Livro WHERE autorID = 1')
+    cursor.execute('SELECT nome, senha FROM usuarios')
     objetos =  cursor.fetchall()
     cursor.close()
 
