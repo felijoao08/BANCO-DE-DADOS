@@ -1,11 +1,10 @@
 from flask import Flask,  request, jsonify, render_template, redirect, flash
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+
 
 import mysql.connector
  
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "dsafonfnwruihruiwfjlhbsdavbieffui"
- 
 
 db = mysql.connector.connect (
     host = 'localhost',
