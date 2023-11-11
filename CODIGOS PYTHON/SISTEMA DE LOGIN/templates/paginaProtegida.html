@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Protegida</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            margin-top: 50px;
+        }
+        main {
+            max-width: 700px;
+            height: 600px;
+            background-color: rgb(32, 30, 30);
+            margin: auto;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        img {
+            border-radius: 20px;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Tente melhor na proxima vez...bye...</h1>
+        <img src="{{ url_for('static', filename='imagens/deadpool-02.gif') }}" alt="Seu GIF Animado">
+        <p>PAGINA PROTEGIDA, PROIBIDA A ENTRADA SEM VALIDAÇÃO.</p>
+    </main>    
+</body>
+</html>

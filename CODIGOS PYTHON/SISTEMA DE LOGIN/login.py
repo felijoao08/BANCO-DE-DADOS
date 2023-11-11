@@ -84,7 +84,7 @@ def resposta():
     if session.get('usuario'):
         return render_template('resposta.html')
     else:
-        return 'Você não  tem permissão para acessar esta pagina!'
+        return render_template('paginaProtegida.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
