@@ -1,10 +1,10 @@
-from flask import Flask,  request, jsonify, render_template, redirect, flash
+from flask import Flask,  request, jsonify, render_template, redirect, flash, session
 
 
 import mysql.connector
  
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "dsafonfnwruihruiwfjlhbsdavbieffui"
+app.config['SECRET_KEY'] = "568425806"
 
 db = mysql.connector.connect (
     host = 'localhost',
@@ -32,6 +32,7 @@ def cadastro():
     cursor = db.cursor(dictionary=True)
     cursor.execute("INSERT INTO usuarios (nome, senha) VALUES (%s, %s)", (usuario, Password))
     db.commit()
+    session['usuario'] = True #Criando a sessao do usuario cadastrado
     cursor.close()
     return redirect('/resposta')
 
@@ -61,6 +62,7 @@ def login():
 
     #verificando se os valores sao correspondentes 
     if name == usuario and senha == Password:
+        session['usuario'] = True
         cursor.close()
         return redirect('/resposta')
     #emitindo uma mensagem de erro caso o usuario n esteja cadastrado ou erro de digitação
@@ -68,12 +70,21 @@ def login():
         flash("Invalid password or user")
         cursor.close()
         return redirect('/login')
-    
-        
+
+
+#ROTA PARA LOGOUT
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+
 #ROTA PARA QUANDO ENTRAR NO SITE
 @app.route('/resposta')
 def resposta():
-    return render_template('resposta.html')
+    if session.get('usuario'):
+        return render_template('resposta.html')
+    else:
+        return 'Você não  tem permissão para acessar esta pagina!'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
