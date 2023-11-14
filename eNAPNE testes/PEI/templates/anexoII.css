@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color:#44A666;
+}
+fieldset {
+    border: none;
+}
+
+/*parte 1: primeira pagina do anexo 2(infromaçoes do aluno)*/
+header {
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+main {
+    margin: auto;
+    max-width: 1000px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.dados-pessoais-aluno {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+   
+}
+.dados-pessoais-aluno > div {
+    display: flex;
+    flex-direction: column;
+}
+.dados-pessoais-aluno > div > input{
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+
+/*parte 2: segunda pagina do anexo 2(infromaçoes do Plano do Componente Curricular )*/
+
+.PlanoComponenteCurricular{
+    border: none;
+}
+.caixaDeTitulo {
+    background-color:#53A62D;
+    display: flex;
+    height: 30px;
+    max-width: 900px;
+    margin: auto;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+    flex-wrap: wrap;
+}
+.caixaDeTitulo > div {
+    width: 450px;
+    background-color: #53A62D;
+    text-align: center;
+}
+.PlanoComponenteCurricular {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.PlanoComponenteCurricular > div > label{
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.PlanoComponenteCurricular > div > input{
+    height: 150px;
+    width: 450px;
+}
+.RDAPpeiPeloProfessor > div{
+    display: flex;
+    flex-direction: column;
+    max-width: 915px;
+    margin: auto;
+}
+.RDAPpeiPeloProfessor > div > input {
+    height: 200px;
+}
+.RDAPpeiPeloProfessor > div > label {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}

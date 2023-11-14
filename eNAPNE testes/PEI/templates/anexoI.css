@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color:#44A666;
+}
+
+/*parte 1: primeira pagina do pei(infromaçoes do aluno)*/
+header {
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+main {
+    margin: auto;
+    max-width: 1000px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.dados-pessoais-aluno {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+   
+}
+.dados-pessoais-aluno > div {
+    display: flex;
+    flex-direction: column;
+}
+.dados-pessoais-aluno > div > input{
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+
+/*parte 2: primeira pagina do pei(infromaçoes do aluno)*/
+.dados-escolar-pessoal{
+    max-width: 900px;
+    margin: auto;
+    border: none;
+   
+}
+.dados-escolar-pessoal > div{
+    display: flex;
+    flex-direction: column;
+}
+.dados-escolar-pessoal > div > label{
+    background-color:#53A62D;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dados-escolar-pessoal > div > input{
+    height: 100px;
+    margin-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0.5px solid black;
+}
