@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color:#44A666;
+}
+fieldset {
+    border: none;
+}
+
+/*parte 1: primeira pagina do anexo 3(infromaçoes do aluno)*/
+header {
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+main {
+    margin: auto;
+    max-width: 1000px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/*parte 2: primeira pagina do anexo 3(infromaçoes do aluno)*/
+.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+}
+.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div {
+    display: flex;
+    flex-direction: column;
+}
+.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div > label {
+    background-color:#53A62D;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div > textarea {
+    height: 300px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0.5px solid black;
+    margin-bottom: 20px;
+}
+/*parte 3: primeira pagina do anexo 3(informaçoes do aluno)*/
+
+.INFORMAÇÕESESUGESTÕESNECESSÁRIASAADAPTAÇÃOCURRICULAR {
+    text-align: center;
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+   
+}
+.INFORMAÇÕESESUGESTÕESNECESSÁRIASAADAPTAÇÃOCURRICULAR > div {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 50px;
+    border: 10px solid #53A62D;
+    border-radius: 10px;
+}
+.INFORMAÇÕESESUGESTÕESNECESSÁRIASAADAPTAÇÃOCURRICULAR > div > h3 {
+    margin-bottom: 30px;
+}
+.INFORMAÇÕESESUGESTÕESNECESSÁRIASAADAPTAÇÃOCURRICULAR > div > input {
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+
+
+/*parte 4: primeira pagina do anexo 3(informaçoes do aluno)*/
+.CONTEXTUALIZAÇÃO-CASO {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+}
+.CONTEXTUALIZAÇÃO-CASO > div {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 50px;
+    text-align: center;
+}
+.CONTEXTUALIZAÇÃO-CASO > div > textarea {
+    height: 300px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
