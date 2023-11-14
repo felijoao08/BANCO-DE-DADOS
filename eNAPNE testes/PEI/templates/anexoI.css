@@ -65,7 +65,7 @@ main {
     align-items: center;
     justify-content: center;
 }
-.dados-escolar-pessoal > div > input{
+.dados-escolar-pessoal > div > textarea{
     height: 100px;
     margin-bottom: 5px;
     border-bottom-left-radius: 5px;
