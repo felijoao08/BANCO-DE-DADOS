@@ -27,25 +27,20 @@ main {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.dados-pessoais-aluno {
+.numero_pei_anexoI {
+    text-align: center;
     margin: auto;
     max-width: 900px;
     margin-bottom: 50px;
     border: none;
-   
 }
-.dados-pessoais-aluno > div {
-    display: flex;
-    flex-direction: column;
-}
-
-.dados-pessoais-aluno > div > input{
+.numero_pei_anexoI > input {
     height: 30px;
+    max-width: 30px;
     margin-top: 10px;
     border-radius: 5px;
     border: 0.5px solid black;
 }
-
 /*parte 2: primeira pagina do pei(infromaçoes do aluno)*/
 .dados-escolar-pessoal{
     max-width: 900px;
@@ -83,7 +78,7 @@ main {
 }
 .Botao {
     height: 50px;
-    width: 100px;
+    width: 300px;
     margin-left: 22px;
     margin-top: 20px;
     background-color: #53A62D;
@@ -92,45 +87,6 @@ main {
 }
 .Botao:hover {
     height: 55px;
-    width: 105px;
-}
-.Botao2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100px;
-    margin-right: 22px;
-    margin-top: 20px;
-    background-color: #53A62D;
-    border-radius: 20px;
-    border: none;
-}
-.Botao2 > a {
-    text-decoration: none;
-    color: black;
-}
-.Botao2:hover {
-    height: 55px;
-    width: 105px;
-}
-.Botao3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100px;
-    margin-right: 22px;
-    margin-top: 20px;
-    background-color: #53A62D;
-    border-radius: 20px;
-    border: none;
-}
-.Botao3 > a {
-    text-decoration: none;
-    color: black;
-}
-.Botao3:hover {
-    height: 55px;
-    width: 105px;
+    width: 305px;
+    transition-duration: 0.5s;
 }

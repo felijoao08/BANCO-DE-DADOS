@@ -9,7 +9,7 @@ fieldset {
     border: none;
 }
 
-/*parte 1: primeira pagina do anexo 3(infromaçoes do aluno)*/
+/*parte 1: primeira pagina: Cadastros*/
 header {
     margin: auto;
     text-align: center;
@@ -30,54 +30,77 @@ main {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.numero_pei_anexoIII {
-    text-align: center;
+
+
+/*parte 2: primeira pagina: cadastros(infromaçoes do curso)*/
+.dados-curso {
     margin: auto;
     max-width: 900px;
     margin-bottom: 50px;
     border: none;
 }
-.numero_pei_anexoIII > input {
-    height: 30px;
-    max-width: 30px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 0.5px solid black;
-}
-
-
-
-/*parte 2: primeira pagina do anexo 3(infromaçoes do aluno)*/
-.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE {
-    margin: auto;
-    max-width: 900px;
-    margin-bottom: 50px;
-    border: none;
-}
-.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div {
+.dados-curso > div {
     display: flex;
     flex-direction: column;
 }
-.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div > label {
-    background-color:#53A62D;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+.dados-curso > div > label {
     height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-.REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE > div > textarea {
-    height: 300px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.dados-curso > div > input {
+    height: 30px;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    margin-bottom: 20px;
+}
+
+
+/*parte 3: primeira pagina: cadastros(infromaçoes do aluno)*/
+.dados-aluno {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+}
+.dados-aluno > div {
+    display: flex;
+    flex-direction: column;
+}
+.dados-aluno > div > label {
+    height: 30px;
+}
+.dados-aluno > div > input {
+    height: 30px;
+    max-width: 500px;
+    border-radius: 5px;
     border: 0.5px solid black;
     margin-bottom: 20px;
 }
 
 
 
+/*parte 4: primeira pagina: cadastros(infromaçoes do Equipe Multidisciplinar)*/
 
+.dados-equipe-multidisciplinar {
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+}
+.dados-equipe-multidisciplinar > div {
+    display: flex;
+    flex-direction: column;
+}
+.dados-equipe-multidisciplinar > div > label {
+    height: 30px;
+}
+.dados-equipe-multidisciplinar > div > input {
+    height: 30px;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    margin-bottom: 20px;
+}
 
 /*BOTOES*/
 .botoes {

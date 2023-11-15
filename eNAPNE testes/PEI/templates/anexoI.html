@@ -10,40 +10,20 @@
     <header>
         <div>
             <h3>ANEXO 1<br>PLANO EDUCACIONAL INDIVIDUALIZADO(PEI)<br>HISTORICO DO ALUNO</h3>
-            <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px">
+            <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px"> 
         </div>
     </header>
     <main>
         <div class="historico-aluno">
             <form class="historico-do-aluno" action="/anexoI" method="post" autocomplete="off">
-                <fieldset class="dados-pessoais-aluno">
-                    <div>
-                        <label for="nome">Nome do Estudante</label>
-                        <input type="text" name="nome" id="nome">
-                    </div>
-                    <div>
-                        <label for="Curso">Curso</label>
-                        <input type="text" name="Curso" id="Curso">
-                    </div>
-                    <div>
-                        <label for="NEE">Necessidades Educacionais Específicas</label>
-                        <input type="text" name="NEE" id="NEE">
-                    </div>
-                    <div>
-                        <label for="EMR-nome">Equipe multiprofissional responsável(Nome)</label>
-                        <input type="text" name="EMR-nome" id="EMR-nome">
-                        <label for="EMR-funçao">Equipe multiprofissional responsável(Função)</label>
-                        <input type="text" name="EMR-funçao" id="EMR-funçao">
-                    </div>
+                <fieldset class="numero_pei_anexoI">
+                    <label for="numero_pei_anexoI">Numero do pei do estudante</label>
+                    <input type="text" name="numero_pei_anexoI" id="numero_pei_anexoI" required>
                 </fieldset>
                 <fieldset class="dados-escolar-pessoal">
                     <div>
                         <label class="HPE-estudante" for="HPE-estudante">HISTÓRICO PESSOAL E ESCOLAR DO (A) ESTUDANTE</label>
                         <textarea type="text" name="HPE-estudante" id="HPE-estudante"></textarea>
-                    </div>
-                    <div>
-                        <label class="NEE-Estudante" for="NEE-Estudante">Necessidades Educacionais Específicas</label>
-                        <textarea type="text" name="NEE-EstudanteTEXT"  id="NEE-Estudante"></textarea>
                     </div>
                     <div>
                         <label for="CHCIN">Conhecimentos, Habilidades, Capacidades, 
@@ -54,17 +34,16 @@
                         <label for="Dificuadades-apresentadas">Dificuldades apresentadas </label>
                         <textarea type="text" name="Dificuadades-apresentadas" id="Dificuadades-apresentadas"></textarea>
                     </div>
+                    <div>
+                        <label class="observaçoes" for="observaçoes">Observações</label>
+                        <textarea type="text" name="observaçoes"  id="observaçoes"></textarea>
+                    </div>
                 </fieldset>
                 <div class="botoes">
                     <div class="botao">
-                        <input class="Botao" type="submit" value="Salvar">
+                        <input class="Botao" type="submit" value="Avançar">
                     </div>
-                    <div class="Botao2">
-                        <a href="/anexoII">Anexo II</a>
-                    </div>
-                    <div class="Botao3">
-                        <a href="/anexoIII">Anexo III</a>
-                    </div>
+                </div>
                 </div>
             </form>
         </div>

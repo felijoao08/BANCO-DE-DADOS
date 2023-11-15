@@ -14,30 +14,18 @@
     <main>
         <div class="anexoII">
             <form action="/anexoII" method="post" autocomplete="off">
+                <fieldset class="numero_pei_anexoII">
+                    <label for="numero_pei_anexoII">Número do pei que está relacionado ao aluno</label>
+                    <input type="text" name="numero_pei_anexoII" id="numero_pei_anexoII" required>
+                </fieldset>
                 <fieldset class="dados-pessoais-aluno">
                     <div>
-                        <label for="nome-estudante">Nome do Estudante</label>
-                        <input type="text" name="nome-estudante" id="nome-estudante">
-                    </div>
-                    <div>
-                        <label for="nome-curso">Curso</label>
-                        <input type="text" name="nome-curso" id="nome-curso">
-                    </div>
-                    <div>
-                        <label for="NEE">Necessidades Educacionais Específicas</label>
-                        <input type="text" name="NEE" id="NEE">
-                    </div>
-                    <div>
                         <label for="CC-D">Componente Curricular/Disciplina</label>
-                        <input type="text" name="CC-D" id="CC-D">
+                        <input type="text" name="CC-D" id="CC-D" required>
                     </div>
                     <div>
                         <label for="Docente">Docente(s)</label>
-                        <input type="text" name="Docente" id="Docente">
-                    </div>
-                    <div>
-                        <label for="EMR">Equipe multiprofissional responsável</label>
-                        <input type="text" name="EMR" id="EMR">
+                        <input type="text" name="Docente" id="Docente" required>
                     </div>
                 </fieldset>
                 <fieldset >
@@ -62,33 +50,22 @@
                             <textarea type="text" name="MetodologiasAdaptaçoes" id="MetodologiasAdaptaçoes" placeholder="Adaptações"></textarea>
                         </div>
                         <div>
-                            <label for="">Recursos Didáticos </label>
+                            <label for="RecursosDidáticos">Recursos Didáticos </label>
                             <textarea type="text" name="RecursosDidáticos" id="RecursosDidáticos" placeholder="Recursos Didáticos"></textarea>
                             <textarea type="text" name="RecursosDidáticosAdaptaçoes" id="RecursosDidáticosAdaptaçoes" placeholder="Adaptações"></textarea>
                         </div>
                         <div>
-                          <label for="">Avaliações</label>
-                          <textarea type="text" name="Avaliações" id="Avaliações"  placeholder="Avaliações"></textarea>
-                          <textarea type="text" name="AvaliaçõesAdaptaçoes" id="AvaliaçõesAdaptaçoes"  placeholder="Adaptações"></textarea>
-                        </div>
-                    </div>
-                    <div class="RDAPpeiPeloProfessor">
-                        <div>
-                            <label for="">Registro do desenvolvimento e acompanhamento processual do PEI pelo professor</label>
-                            <textarea type="text" name="RDAPpeiPeloProfessor" id="RDAPpeiPeloProfessor"></textarea>
+                            <label for="Avaliaçao_PlanoDisciplina">Avaliação, Plano da disciplina</label>
+                            <textarea type="text" name="Avaliaçao_PlanoDisciplina" id="Avaliaçao_PlanoDisciplina" placeholder="Avaliação, plano da disciplina"></textarea>
+                            <textarea type="text" name="Avaliaçao_PlanoDisciplinaAdaptaçoes" id="Avaliaçao_PlanoDisciplinaAdaptaçoes" placeholder="Adaptações"></textarea>
                         </div>
                     </div>
                 </fieldset>
                 <div class="botoes">
                     <div class="botao">
-                        <input class="Botao" type="submit" value="Salvar">
+                        <input class="Botao" type="submit" value="Avançar">
                     </div>
-                    <div class="botaoVoltar">
-                        <a href="/">Anexo I</a>
-                    </div>
-                    <div class="Botao2">
-                        <a href="/anexoIII">Anexo III</a>
-                    </div>
+                </div>
                 </div>
             </form>
         </div>

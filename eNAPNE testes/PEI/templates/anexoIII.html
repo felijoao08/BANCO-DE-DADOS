@@ -15,6 +15,10 @@
     <main>
         <div class="anexoIII">
             <form action="/anexoIII" method="post" autocomplete="off">
+                <fieldset class="numero_pei_anexoIII">
+                    <label for="numero_pei_anexoIII">Número do pei que está relacionado ao aluno</label>
+                    <input type="text" name="numero_pei_anexoIII" id="numero_pei_anexoIII" required>
+                </fieldset>
                 <fieldset class="REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE">
                     <div>
                         <label for="DAEDAEEpei">Descrever avanços do/a estudante durante o acompanhamento de elaboração e execução do PEI.</label>  
@@ -25,41 +29,9 @@
                         <textarea type="text" name="PEM" id="PEM"></textarea>
                     </div>
                 </fieldset>
-                <fieldset class="INFORMAÇÕESESUGESTÕESNECESSÁRIASAADAPTAÇÃOCURRICULAR">
-                    <h2>INFORMAÇÕES E SUGESTÕES NECESSÁRIAS A ADAPTAÇÃO CURRICULAR</h2>
-                    <h3><strong>Proposta de Adaptação Curricular </strong></h3>
-                    <div>
-                        <h3><strong>DADOS DO DISCENTE</strong></h3>
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome">
-                        <label for="matricula">Matricula</label>
-                        <input type="text" name="matricula" id="matricula">
-                        <label for="curso">Curso</label>
-                        <input type="text" name="cuso" id="curso">
-                    </div>
-                    <div>
-                        <h3><strong>EQUIPE RESPONSÁVEL</strong></h3>
-                        <label for="CordenaçãoCurso">Cordenação de curso</label>
-                        <input type="text" name="CordenaçãoCurso" id="CordenaçãoCurso">
-                        <label for="NucleoApoio">Equipe núcleo de apoio à pessoas com nessessidades especiais</label>
-                        <input type="text" name="NucleoApoio" id="NucleoApoio">
-                    </div>
-                </fieldset>
-                <fieldset class="CONTEXTUALIZAÇÃO-CASO">
-                    <div>
-                        <label for="CONTEXTUALIZAÇÃO-CASO"><strong>CONTEXTUALIZAÇÃO DO CASO</strong></label>
-                        <textarea name="CONTEXTUALIZAÇÃO-CASO" id="CONTEXTUALIZAÇÃO-CASO" ></textarea>
-                    </div>
-                </fieldset>
                 <div class="botoes">
                     <div class="botao">
                         <input class="Botao" type="submit" value="Salvar">
-                    </div>
-                    <div class="Botao2">
-                        <a href="/">Anexo I</a>
-                    </div>
-                    <div class="Botao3">
-                        <a href="/anexoII">Anexo II</a>
                     </div>
                 </div>
              </form>

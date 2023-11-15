@@ -49,7 +49,20 @@ main {
 }
 
 /*parte 2: segunda pagina do anexo 2(infromaçoes do Plano do Componente Curricular )*/
-
+.numero_pei_anexoII {
+    text-align: center;
+    margin: auto;
+    max-width: 900px;
+    margin-bottom: 50px;
+    border: none;
+}
+.numero_pei_anexoII > input {
+    height: 30px;
+    max-width: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
 .PlanoComponenteCurricular{
     border: none;
 }
@@ -101,6 +114,7 @@ main {
 
 
 /*BOTOES*/
+/*BOTOES*/
 .botoes {
     display: flex;
     justify-content: space-around;
@@ -108,7 +122,7 @@ main {
 }
 .Botao {
     height: 50px;
-    width: 100px;
+    width: 300px;
     margin-left: 22px;
     margin-top: 20px;
     background-color: #53A62D;
@@ -117,44 +131,6 @@ main {
 }
 .Botao:hover {
     height: 55px;
-    width: 105px;
-}
-.Botao2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100px;
-    margin-right: 22px;
-    margin-top: 20px;
-    background-color: #53A62D;
-    border-radius: 20px;
-    border: none;
-}
-.Botao2 > a {
-    text-decoration: none;
-    color: black;
-}
-.Botao2:hover {
-    height: 55px;
-    width: 105px;
-}
-.botaoVoltar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 100px;
-    margin-top: 20px;
-    background-color: #53A62D;
-    border-radius: 20px;
-    border: none;
-}
-.botaoVoltar > a {
-    text-decoration: none;
-    color: black;
-}
-.botaoVoltar:hover {
-    height: 55px;
-    width: 105px;
+    width: 305px;
+    transition-duration: 0.5s;
 }

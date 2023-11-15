@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napne</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+</head>
+<body>
+    <header>
+        <div>
+            <h3>CADASTROS: CURSO, ALUNO, EQUIPE MULTIDISCIPLINAR<br>PLANO EDUCACIONAL INDIVIDUALIZADO(PEI)<br></h3>
+            <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px">
+        </div>
+    </header>
+    <main>
+        <div class="informaçoes_do_curso">
+            <form class="dados-cadastros" action="/cadastro" method="post" autocomplete="off">
+                <fieldset class="dados-curso">
+                    <h2>Informações do curso</h2>
+                    <div>
+                        <label for="codigo_curso">Código do curso</label>
+                        <input type="text" name="codigo_curso" id="codigo_curso" placeholder="Digite o codigo do curso" required>
+                    </div>
+                    <div>
+                        <label for="Curso_nome">Curso</label>
+                        <input type="text" name="Curso_nome" id="Curso_nome" placeholder="Digite o nome" required>
+                    </div>
+                    <div>
+                        <label for="coordenador">Coordenador</label>
+                        <input type="text" name="coordenador" id="coordenador" placeholder="Digite o nome do coordenador" required>
+                    </div>
+                    <div>
+                        <label for="campus">Campus</label>
+                        <input type="text" name="campus" id="campus" placeholder="Digite o nome do campus" required>
+                    </div>
+                    <div>
+                        <label for="nivel_ensino">Nível de ensino</label>
+                        <input type="text" name="nivel_ensino" id="nivel_ensino" placeholder="Digite o nivel de ensino">
+                    </div>
+                </fieldset>
+                <fieldset class="dados-aluno">
+                    <h2>Informações do Aluno</h2>
+                    <div>
+                        <label for="nome">Nome do estudante</label>
+                        <input type="text" name="nome_aluno" id="nome_aluno" placeholder="Digite o nome" required>
+                    </div>
+                    <div>
+                        <label for="matricula_aluno">Matricula</label>
+                        <input type="text" name="matricula_aluno" id="matricula_aluno" placeholder="Digite a matricula" required>
+                    </div>
+                    <div>
+                        <label for="codigo_curso_aluno">Codigo do curso</label>
+                        <input type="text" name="codigo_curso_aluno" id="codigo_curso_aluno" placeholder="Digite o codigo" required>
+                    </div>
+                    <div>
+                        <label for="NEE">Necessidades especificas</label>
+                        <input type="text" name="NEE" id="NEE" placeholder="Digite as nessessidades especificas">
+                    </div>
+                    <div>
+                        <label for="numero_pei">Número do PEI ao qual este(a) aluno(a) está vinculado(a)</label>
+                        <input type="text" name="numero_pei" id="numero_pei" placeholder="Digite o numero do pei">
+                    </div>
+                </fieldset>
+                <fieldset class="dados-equipe-multidisciplinar">
+                    <h2>Informações da equipe multidisciplinar</h2>
+                    <div>
+                        <label for="codigo_equipe">Código da equipe</label>
+                        <input type="text" name="codigo_equipe" id="codigo_equipe" placeholder="Digite o codigo da equipe">
+                    </div>
+                    <div>
+                        <label for="nome_equipe">Nome da equipe</label>
+                        <input type="text" name="nome_equipe" id="nome_equipe" placeholder="Digite o nome">
+                    </div>
+                    <div>
+                        <label for="funçao_equipe">Função da equipe</label>
+                        <input type="text" name="funçao_equipe" id="funçao_equipe" placeholder="Digite a função">
+                    </div>
+                    <div>
+                        <label for="numero_pei_equipe">Número do pei do aluno que a equipe está relacionada</label>
+                        <input type="text" name="numero_pei_equipe" id="numero_pei_equipe" placeholder="Digite o numero do pei">
+                    </div>
+                </fieldset>
+                <div class="botoes">
+                    <div class="botao">
+                        <input class="Botao" type="submit" value="Avançar">
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
