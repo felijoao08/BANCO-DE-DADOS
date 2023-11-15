@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anexo I</title>
-    <link rel="stylesheet" href="anexoI.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='anexoI.css') }}">
 </head>
 <body>
     <header>
         <div>
             <h3>ANEXO 1<br>PLANO EDUCACIONAL INDIVIDUALIZADO(PEI)<br>HISTORICO DO ALUNO</h3>
-            <img src="imagens/ink.png" alt="" height="200px">
+            <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px">
         </div>
     </header>
     <main>
         <div class="historico-aluno">
-            <form class="historico-do-aluno" action="">
+            <form class="historico-do-aluno" action="/anexoI" method="post" autocomplete="off">
                 <fieldset class="dados-pessoais-aluno">
                     <div>
                         <label for="nome">Nome do Estudante</label>
@@ -55,6 +55,17 @@
                         <textarea type="text" name="Dificuadades-apresentadas" id="Dificuadades-apresentadas"></textarea>
                     </div>
                 </fieldset>
+                <div class="botoes">
+                    <div class="botao">
+                        <input class="Botao" type="submit" value="Salvar">
+                    </div>
+                    <div class="Botao2">
+                        <a href="/anexoII">Anexo II</a>
+                    </div>
+                    <div class="Botao3">
+                        <a href="/anexoIII">Anexo III</a>
+                    </div>
+                </div>
             </form>
         </div>
     </main>

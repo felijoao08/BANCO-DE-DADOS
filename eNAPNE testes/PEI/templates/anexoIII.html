@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anexo III</title>
-    <link rel="stylesheet" href="anexoIII.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='anexoIII.css') }}">
 </head>
 <body>
     <header>
         <h3>ANEXO III<br>REGISTRO DO ACOMPANHAMENTO DO PEI E PARECER DA EQUIPE</h3>
-        <img src="imagens/ink.png" alt="img-napne" height="200px">
+        <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px">
     </header>
     <main>
         <div class="anexoIII">
-            <form action="">
+            <form action="/anexoIII" method="post" autocomplete="off">
                 <fieldset class="REGISTRODOACOMPANHAMENTODOPEIEPARECERDAEQUIPE">
                     <div>
                         <label for="DAEDAEEpei">Descrever avanços do/a estudante durante o acompanhamento de elaboração e execução do PEI.</label>  
@@ -51,6 +51,17 @@
                         <textarea name="CONTEXTUALIZAÇÃO-CASO" id="CONTEXTUALIZAÇÃO-CASO" ></textarea>
                     </div>
                 </fieldset>
+                <div class="botoes">
+                    <div class="botao">
+                        <input class="Botao" type="submit" value="Salvar">
+                    </div>
+                    <div class="Botao2">
+                        <a href="/">Anexo I</a>
+                    </div>
+                    <div class="Botao3">
+                        <a href="/anexoII">Anexo II</a>
+                    </div>
+                </div>
              </form>
         </div>
     </main>

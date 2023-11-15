@@ -52,4 +52,21 @@ FROM
 	acompanhamento ON anexo2.id = acompanhamento.idAnexo2 
 WHERE 
 	aluno.matricula = '22222222'
-*/
+
+
+SELECT
+	aluno.nome as Nome,
+    curso.nome as Curso,
+    curso.campus as Campus,
+    anexo1.historico as Historico
+FROM
+	pei
+		INNER JOIN
+	aluno on pei.matriculaAluno = aluno.matricula
+		INNER JOIN
+	curso on aluno.codigoCurso = curso.codigo
+		INNER JOIN
+	anexo1 on anexo1.numeroPei = pei.numero
+	*/
+    
+    select * from aluno;
