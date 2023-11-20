@@ -69,4 +69,34 @@ FROM
 	anexo1 on anexo1.numeroPei = pei.numero
 	*/
     
-    select * from aluno;
+/*
+SELECT 
+	aluno.nome AS Nome_do_Aluno,
+    anexo1.*,
+    anexo2.* ,
+    anexo3.*
+FROM
+	pei
+		INNER JOIN 
+	aluno ON pei.matriculaAluno = aluno.matricula
+    	INNER JOIN 
+	anexo1 ON anexo1.numeroPei = pei.numero
+		INNER JOIN 
+	anexo2 ON anexo2.numeroPei = pei.numero
+    	INNER JOIN 
+	anexo3 ON anexo3.numeroPei = pei.numero
+WHERE
+	aluno.matricula = '99999999';
+*/
+
+select aluno.nome, aluno.necessidadesEspecificas from aluno where aluno.matricula = '22222222';
+
+
+SELECT 
+	aluno.nome AS Nome_do_Aluno, aluno.matricula AS Matricula, aluno.necessidadesEspecificas As Necessidades, curso.nome AS NomeDoCurso
+FROM
+	aluno
+		INNER JOIN 
+	curso ON curso.matriculaAluno = aluno.matricula
+WHERE
+	aluno.matricula = '99999999';

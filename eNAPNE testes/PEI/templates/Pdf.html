@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar documentação pei</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pdf.css') }}">
+</head>
+<body>
+    <main>
+        <div class="divTitulo">
+            <h1>Gerar PDF</h1>
+            <img src="{{ url_for('static', filename='ink.png') }}" alt="napne" height="200px"> 
+            <div><a href="/">Inicio</a></div>
+        </div>
+        <div class="divConteudo">
+            <form action="/pei" method="POST">
+                <fieldset class="inserir-dados-aluno">
+                    <label for="matriculaPDF">Matricula do aluno</label>
+                    <input type="text" name="matriculaPDF" id="matriculaPDF" placeholder="Digite a matricula">
+                    <input class="botao-pesquisar" type="submit" name="açao" value="Procurar">
+                </fieldset>
+                <fieldset class="mostrar-dados-aluno">
+                    <div>
+                        {% if nome_aluno %}
+                            <p>Nome do Aluno: {{ nome_aluno[0]['nome'] }}</p>
+                            <p>Necessidade especifica: {{nome_aluno[0]['necessidadesEspecificas']}}</p>
+                        {% else %}
+                            <p>Não há aluno corresponde a está matricula</p>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset class="botao"> 
+                    <input type="submit" name="açao" value="Gerar-Pei">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

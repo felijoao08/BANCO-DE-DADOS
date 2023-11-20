@@ -138,6 +138,34 @@ def anexoIII():
 
 
 
+#GERAR DOCUMENTAÇAO PEI: PAGINA 5
+@app.route('/pei')
+def paginapei():
+   return render_template('pdf.html')
+@app.route('/pei', methods=['POST'])
+def pei():
+    #Aqui irei pegar as informaçoes de determinado aluno pela matricula
+    cursor = db.cursor(dictionary=True)
+    matriculaPDF = request.form.get('matriculaPDF')
+    #aqui irei verificar qual a açao do botao
+    açao = request.form['açao']
+    if açao == 'Procurar':
+        cursor.execute("select aluno.nome, aluno.necessidadesEspecificas FROM aluno WHERE aluno.matricula = %s", (matriculaPDF,))
+        aluno = cursor.fetchall()
+        try:
+            nome_aluno = aluno
+        except:
+            nome_aluno = 'Não há aluno corrrespondente a está matricula.'
+        db.commit()
+        cursor.close()
+        return render_template('pdf.html', nome_aluno=nome_aluno)
+    elif açao == 'Gerar-Pei':
+        #Aqui irei coletar todas as informaçoes da documentaçao e guardar de forma organizada para gerar o pei
+        return redirect('/')
+
+    
+ 
+  
 
 if __name__ == '__main__':
     app.run(debug=True)
