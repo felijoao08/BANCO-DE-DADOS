@@ -4,6 +4,7 @@
 }
 body {
     background-color:#44A666;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*parte 1: primeira pagina do pei(infromaçoes do aluno)*/
@@ -81,7 +82,7 @@ main {
     width: 300px;
     margin-left: 22px;
     margin-top: 20px;
-    background-color: #53A62D;
+    background-color: #44A666;
     border-radius: 20px;
     border: none;
     margin-bottom: 30px;
@@ -102,9 +103,9 @@ main {
 .botoesLocalizaçao > div > a {
     text-decoration: none;
     color: black;
-    background-color: #53A62D;
+    background-color: #44A666;
     height: 40px;
-    width: 65px;
+    width: 70px;
     border-radius: 10px;
     margin-left: 20px;
     display: flex;
