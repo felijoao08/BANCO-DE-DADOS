@@ -68,7 +68,7 @@ main {
     border: none;
 }
 .caixaDeTitulo {
-    background-color:#53A62D;
+    background-color:#44A666;
     display: flex;
     height: 30px;
     max-width: 900px;
@@ -81,7 +81,7 @@ main {
 }
 .caixaDeTitulo > div {
     width: 450px;
-    background-color: #53A62D;
+    background-color: #44A666;
     text-align: center;
 }
 .PlanoComponenteCurricular {

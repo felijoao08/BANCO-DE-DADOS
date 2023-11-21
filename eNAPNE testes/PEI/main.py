@@ -149,6 +149,7 @@ def pei():
     matriculaPDF = request.form.get('matriculaPDF')
     #aqui irei verificar qual a açao do botao
     açao = request.form['açao']
+    #executando a açao ao clicar no botao analisar aluno
     if açao == 'Procurar':
         cursor.execute("select aluno.nome, aluno.necessidadesEspecificas FROM aluno WHERE aluno.matricula = %s", (matriculaPDF,))
         aluno = cursor.fetchall()
@@ -159,9 +160,49 @@ def pei():
         db.commit()
         cursor.close()
         return render_template('pdf.html', nome_aluno=nome_aluno)
+    #executando a açao ao clicar no botao de gerar pei
     elif açao == 'Gerar-Pei':
+        #pegando a matricula de determinado aluno
+        matricula = request.form.get('confirmar_matricula')
         #Aqui irei coletar todas as informaçoes da documentaçao e guardar de forma organizada para gerar o pei
-        return redirect('/')
+        cursor.execute("SELECT curso.nome AS nome_curso, curso.nivelEnsino AS Nive_de_Ensino, curso.coordenador AS coordenador, aluno.nome AS nome_aluno, aluno.necessidadesEspecificas AS necessidades_Especificas, aluno.matricula As matricula, equipeMultiDisciplinar.nome AS Equipe_nome, equipeMultiDisciplinar.funcao AS funcao, anexo1.historico AS historico, anexo1.conhecimentosHabilidades AS conhecimentos_habilidades, anexo1.dificuldades As dificuldades, anexo1.observacoes AS observacoes, anexo2.disciplina AS disciplina, anexo2.docente AS docente, anexo2.objetivosPlanoDisciplina AS OPD, anexo2.objetivosAdaptacoesDisciplina AS OAD, anexo2.conteudoPlanoDisciplina AS CPD, anexo2.conteudoAdaptacoesDisciplina AS CAD, anexo2.metodologiaPlanoDisciplina AS MPD,  anexo2.metodologiaAdaptacoesDisciplina AS MAD, anexo2.recursoDidaticoPlanoDisciplina AS RDPD, anexo2.recursoDidaticoAdaptacoesDisciplina AS RDAD, anexo2.avaliacaoPlanoDisciplina AS APD, anexo2.avaliacaoAdaptacoesDisciplina AS AAD, anexo3.avancos AS avancos, anexo3.parecer AS parecer FROM curso INNER JOIN aluno ON aluno.codigoCurso = curso.codigo INNER JOIN pei ON aluno.matricula = pei.matriculaAluno INNER JOIN equipeMultidisciplinar ON equipeMultidisciplinar.numeroPei = pei.numero INNER JOIN anexo1 ON anexo1.numeroPei = pei.numero INNER JOIN anexo2 ON anexo2.numeroPei = pei.numero INNER JOIN anexo3 ON anexo3.numeroPei = pei.numero WHERE aluno.matricula =%s", (matricula,))
+        dados_pei = cursor.fetchall()
+        try:
+            Nivel_ensino = dados_pei[0]['Nive_de_Ensino']
+            Nome_estudante = dados_pei[0]['nome_aluno']
+            Nome_curso = dados_pei[0]['nome_curso']
+            Necessidades_Educacionais_Específicas = dados_pei[0]['necessidades_Especificas']
+            Equipe_multiprofissional_responsável_nome = dados_pei[0]['Equipe_nome']
+            Equipe_multiprofissional_responsável_funcao = dados_pei[0]['funcao']
+            hsitorico = dados_pei[0]['historico']
+            Conhecimentos_Habilidades_Capacidades = dados_pei[0]['conhecimentos_habilidades']
+            Dificuldades_apresentadas = dados_pei[0]['dificuldades']
+            observacoes = dados_pei[0]['observacoes']
+            Componente_Curricular_Disciplina = dados_pei[0]['disciplina']
+            Docente = dados_pei[0]['docente']
+            Objetivos = dados_pei[0]['OPD']
+            adaptaçoes_objetivos = dados_pei[0]['OAD']
+            Conteúdos_Programáticos = dados_pei[0]['CPD']
+            Conteúdos_Programáticos_Adaptacoes = dados_pei[0]['CAD']
+            Metodologias = dados_pei[0]['MPD']
+            Metodologias_Adaptacoes = dados_pei[0]['MAD']
+            Recursos_Didáticos = dados_pei[0]['RDPD']
+            Recursos_Didáticos_Adaptacoes = dados_pei[0]['RDAD']
+            Avaliações = dados_pei[0]['APD']
+            Avaliações_Adaptacoes = dados_pei[0]['AAD']
+            Acompanhamento  = 'Qualquer informaçao pois nao sei como cadastrar esta tabela'
+            avancos = dados_pei[0]['avancos']
+            parecer = dados_pei[0]['parecer']
+            matricula_aluno = dados_pei[0]['matricula']
+            coordenador = dados_pei[0]['coordenador']
+            equipe_Napene = 'qualque informaçao...'
+            contextualizaçao = 'qualquer informaçao'
+        except:
+            erro = 'Não há aluno com está matricula'
+            return render_template('Pdf.html', erro=erro)
+        db.commit()
+        cursor.close()
+        return render_template('testes.html', dados_pei=dados_pei, Nivel_ensino=Nivel_ensino, Nome_estudante=Nome_estudante, Nome_curso=Nome_curso, Necessidades_Educacionais_Específicas=Necessidades_Educacionais_Específicas, Equipe_multiprofissional_responsável_nome=Equipe_multiprofissional_responsável_nome,  Equipe_multiprofissional_responsável_funcao= Equipe_multiprofissional_responsável_funcao, hsitorico=hsitorico, Conhecimentos_Habilidades_Capacidades=Conhecimentos_Habilidades_Capacidades, Dificuldades_apresentadas=Dificuldades_apresentadas,  observacoes=observacoes, Componente_Curricular_Disciplina=Componente_Curricular_Disciplina, Docente=Docente, Objetivos=Objetivos, adaptaçoes_objetivos=adaptaçoes_objetivos, Conteúdos_Programáticos=Conteúdos_Programáticos, Conteúdos_Programáticos_Adaptacoes=Conteúdos_Programáticos_Adaptacoes,  Metodologias=Metodologias, Metodologias_Adaptacoes=Metodologias_Adaptacoes, Recursos_Didáticos=Recursos_Didáticos, Recursos_Didáticos_Adaptacoes=Recursos_Didáticos_Adaptacoes, Avaliações=Avaliações, Avaliações_Adaptacoes= Avaliações_Adaptacoes, Acompanhamento=Acompanhamento, avancos=avancos, parecer=parecer, matricula_aluno=matricula_aluno, coordenador=coordenador,  equipe_Napene=equipe_Napene, contextualizaçao=contextualizaçao )
 
     
  

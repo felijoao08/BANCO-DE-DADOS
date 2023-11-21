@@ -54,7 +54,7 @@ main {
     flex-direction: column;
 }
 .dados-escolar-pessoal > div > label{
-    background-color:#53A62D;
+    background-color:#44A666;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     height: 30px;

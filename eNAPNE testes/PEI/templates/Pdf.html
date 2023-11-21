@@ -27,11 +27,13 @@
                             <p>Necessidade especifica: {{nome_aluno[0]['necessidadesEspecificas']}}</p>
                         {% else %}
                             <p>Não há aluno corresponde a está matricula</p>
-                        {% endif %}
+                        {% endif %} 
                     </div>
                 </fieldset>
-                <fieldset class="botao"> 
-                    <input type="submit" name="açao" value="Gerar-Pei">
+                <fieldset class="botao">
+                    {% if erro %}<p class="mensagem-erro">{{ erro }}</p>{% endif %}  
+                    <input class="confirmar_matricula" type="text" name="confirmar_matricula" id="confirmar_matricula" placeholder="Confirme a matricula">
+                    <input class="Gerar-Pei" type="submit" name="açao" value="Gerar-Pei">
                 </fieldset>
             </form>
         </div>

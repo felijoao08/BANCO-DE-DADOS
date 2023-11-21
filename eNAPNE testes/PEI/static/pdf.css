@@ -37,17 +37,20 @@ fieldset {
     display: block;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 145px;
 }
 .divTitulo > div > a {
     background-color: #44A666;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 8px 60px;
     border-radius: 10px;
     color: white;
 }
 .divTitulo > div > a:hover {
     transition-duration: 0.5s;
-    font-size: 20px;
+    background-color: white;
+    border: 1px solid #44A666;
+    color: #44A666;
 }
 .divConteudo {
     width: 400px;
@@ -82,7 +85,17 @@ fieldset {
     border-radius: 5px;
     margin-bottom: 10px;
 }
-.botao > input {
+.confirmar_matricula {
+    background-color: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.541) !important;
+    height: 30px;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.Gerar-Pei {
     background-color: #44A666;
     height: 30px;
     width: 400px;
@@ -90,10 +103,20 @@ fieldset {
     border: none;
     border-radius: 10px;
     margin-bottom: 30px;
+   
 }
-.botao > input:hover {
+.Gerar-Pei:hover {
     transition-duration: 0.5s;
     background-color: white;
     border: 1px solid #44A666;
     color: #44A666;
+   
+}
+.mensagem-erro {
+    color: white;
+    text-align: center;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }

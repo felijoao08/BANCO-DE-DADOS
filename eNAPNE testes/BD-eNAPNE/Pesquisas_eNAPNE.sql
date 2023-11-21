@@ -89,14 +89,35 @@ WHERE
 	aluno.matricula = '99999999';
 */
 
-select aluno.nome, aluno.necessidadesEspecificas from aluno where aluno.matricula = '22222222';
 
 
-SELECT 
-	aluno.nome AS Nome_do_Aluno, aluno.matricula AS Matricula, aluno.necessidadesEspecificas As Necessidades, curso.nome AS NomeDoCurso
-FROM
-	aluno
-		INNER JOIN 
-	curso ON curso.matriculaAluno = aluno.matricula
-WHERE
-	aluno.matricula = '99999999';
+
+SELECT
+	curso.nome AS nome_curso,
+	curso.nivelEnsino AS Nive_de_Ensino,
+    curso.coordenador AS coordenador,
+    aluno.nome AS nome_aluno,
+    aluno.necessidadesEspecificas AS necessidades_Especificas,
+    aluno.matricula As matricula,
+    equipeMultiDisciplinar.nome AS Equipe_nome,
+    equipeMultiDisciplinar.funcao AS funcao, 
+    anexo1.historico AS historico,
+    anexo1.conhecimentosHabilidades AS conhecimentos_habilidades,
+    anexo1.dificuldades As dificuldades,
+    anexo1.observacoes AS observacoes,
+    anexo2.disciplina AS disciplina,
+    anexo2.docente AS docente,
+	anexo2.objetivosPlanoDisciplina AS OPD,
+    anexo2.objetivosAdaptacoesDisciplina AS OAD,
+    anexo2.conteudoPlanoDisciplina AS CPD,
+    anexo2.conteudoAdaptacoesDisciplina AS CAD,
+    anexo2.metodologiaPlanoDisciplina AS MPD, 
+    anexo2.metodologiaAdaptacoesDisciplina AS MAD,
+    anexo2.recursoDidaticoPlanoDisciplina AS RDPD,
+    anexo2.recursoDidaticoAdaptacoesDisciplina AS RDAD, 
+    anexo2.avaliacaoPlanoDisciplina AS APD,
+    anexo2.avaliacaoAdaptacoesDisciplina AS AAD,
+    anexo3.avancos AS avancos,
+    anexo3.parecer AS parecer,
+    
+    
